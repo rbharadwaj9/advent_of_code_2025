@@ -26,9 +26,7 @@ file(GLOB DAY_FILES src/??_[ab]_*.cpp)
 
 foreach(SRC_FILE ${DAY_FILES})
     get_filename_component(FNAME ${SRC_FILE} NAME_WE)   # e.g., 01_a_trebuchet
-    string(REGEX MATCH "^[0-9][0-9]_[ab]" PREFIX ${FNAME})      # extract prefix
 
-    # Use the full basename as executable name (01_a_trebuchet)
-    add_executable(${PREFIX} ${SRC_FILE})
+    add_executable(${FNAME} ${SRC_FILE})
 endforeach()
 

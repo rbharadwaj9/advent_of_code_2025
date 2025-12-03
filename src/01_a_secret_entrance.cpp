@@ -10,10 +10,10 @@ private:
 
   const int parse_cmd(const std::string &str) const {
     return ((str[0] == 'L') ? -1 : 1) *
-           std::stoi(str.substr(1, std::string::npos));
+           std::stoi(str.substr(1));
   }
 
-  void process_cmd(const int &cmd) {
+  void process_cmd(const int cmd) {
       curr_arrow += cmd;
       curr_arrow %= 100;
       if (curr_arrow < 0) {
